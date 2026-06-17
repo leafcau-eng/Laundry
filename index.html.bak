@@ -124,22 +124,6 @@ body { font-family:'Outfit',sans-serif; background:var(--surface); color:var(--i
 .price-special { display:inline-flex; align-items:center; gap:4px; background:var(--yellow); color:var(--ink); font-size:12px; padding:3px 10px; border-radius:100px; font-weight:700; }
 .disc-badge { position:absolute; top:14px; right:14px; background:var(--accent); color:white; font-size:10px; font-weight:700; padding:3px 8px; border-radius:100px; }
 
-/* PHOTO PLACEHOLDER */
-.photo-placeholder { background:repeating-linear-gradient(45deg,rgba(26,58,143,0.04) 0,rgba(26,58,143,0.04) 10px,transparent 10px,transparent 20px); border:2px dashed rgba(26,58,143,0.3); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; text-align:center; }
-.photo-ph-inner { display:flex; flex-direction:column; align-items:center; gap:4px; padding:16px; }
-.photo-ph-icon { font-size:28px; opacity:0.5; }
-.photo-ph-text { font-size:13px; font-weight:700; color:var(--ink-muted); }
-.photo-ph-size { font-size:11px; color:var(--ink-muted); opacity:0.7; }
-.photo-hero { width:100%; aspect-ratio:4/3; margin-bottom:18px; }
-.photo-keunggulan { width:100%; aspect-ratio:21/9; margin-bottom:20px; }
-.lokasi-foto-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
-.photo-lokasi { aspect-ratio:4/3; }
-@media (max-width:640px){ .lokasi-foto-grid{ grid-template-columns:1fr; } }
-.photo-thumb { width:100%; aspect-ratio:1/1; margin-bottom:10px; }
-.photo-thumb .photo-ph-icon { font-size:20px; }
-.photo-thumb .photo-ph-text { font-size:10px; }
-.photo-thumb .photo-ph-inner { padding:8px; }
-
 /* EXPRESS */
 .express-wrap { background:linear-gradient(135deg,var(--primary-dark,#0f2460),var(--primary)); border-radius:24px; padding:44px 36px; position:relative; overflow:hidden; }
 .express-wrap::before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px); background-size:24px 24px; }
@@ -310,13 +294,13 @@ const CONFIG = {
      Unit: m², unit, meter, kg, item
   */
   layanan: [
-    { icon:"🪞", nama:"Karpet Permadani",  harga:15000,  unit:"m²",    diskon:true,  special:false, foto:true },
+    { icon:"🪞", nama:"Karpet Permadani",  harga:15000,  unit:"m²",    diskon:true,  special:false },
     { icon:"🏺", nama:"Karpet Turkie",     harga:20000,  unit:"m²",    diskon:true,  special:false },
     { icon:"🕌", nama:"Karpet Masjid",     harga:0,      unit:"",      diskon:false, special:true  },
     { icon:"🏢", nama:"Karpet Kantor",     harga:15000,  unit:"m²",    diskon:true,  special:false },
     { icon:"🪑", nama:"Kursi Kantor",      harga:50000,  unit:"unit",  diskon:false, special:false },
-    { icon:"🛋️", nama:"Sofa Ruang Tamu",  harga:60000,  unit:"unit",  diskon:false, special:false, foto:true },
-    { icon:"🛏️", nama:"Cuci Springbed",   harga:85000,  unit:"meter", diskon:false, special:false, foto:true },
+    { icon:"🛋️", nama:"Sofa Ruang Tamu",  harga:60000,  unit:"unit",  diskon:false, special:false },
+    { icon:"🛏️", nama:"Cuci Springbed",   harga:85000,  unit:"meter", diskon:false, special:false },
     { icon:"🌀", nama:"Vakum Springbed",   harga:0,      unit:"",      diskon:false, special:true  },
   ],
 
@@ -398,13 +382,6 @@ const CONFIG = {
       </div>
     </div>
     <div class="hero-right fu2">
-      <div class="photo-placeholder photo-hero">
-        <div class="photo-ph-inner">
-          <span class="photo-ph-icon">📷</span>
-          <span class="photo-ph-text">Upload Foto Disini</span>
-          <span class="photo-ph-size">Foto Before-After / Tim Kerja · 1200×900px · WebP · max 400KB</span>
-        </div>
-      </div>
       <div class="hero-card">
         <div class="hero-card-title">⚡ DAFTAR HARGA</div>
         <div id="hero-prices"></div>
@@ -448,13 +425,6 @@ const CONFIG = {
   <div class="section">
     <div class="sec-label">Keunggulan</div>
     <div class="sec-title">Kenapa Pilih Kami?</div>
-    <div class="photo-placeholder photo-keunggulan">
-      <div class="photo-ph-inner">
-        <span class="photo-ph-icon">📷</span>
-        <span class="photo-ph-text">Upload Foto Disini</span>
-        <span class="photo-ph-size">Foto Mesin Laundry / Workshop · 1600×700px · WebP · max 400KB</span>
-      </div>
-    </div>
     <div class="ung-grid" id="ung-grid"></div>
   </div>
 
@@ -533,22 +503,6 @@ const CONFIG = {
   <div class="section" id="sec-lokasi">
     <div class="sec-label">Lokasi & Kontak</div>
     <div class="sec-title">Temukan Kami</div>
-    <div class="lokasi-foto-grid">
-      <div class="photo-placeholder photo-lokasi">
-        <div class="photo-ph-inner">
-          <span class="photo-ph-icon">📷</span>
-          <span class="photo-ph-text">Upload Foto Disini</span>
-          <span class="photo-ph-size">Tampak Depan Toko · 800×600px</span>
-        </div>
-      </div>
-      <div class="photo-placeholder photo-lokasi">
-        <div class="photo-ph-inner">
-          <span class="photo-ph-icon">📷</span>
-          <span class="photo-ph-text">Upload Foto Disini</span>
-          <span class="photo-ph-size">Suasana Dalam / Area Penerimaan · 800×600px</span>
-        </div>
-      </div>
-    </div>
     <div class="kontak-grid" id="kontak-grid"></div>
     <a class="map-btn" id="map-btn" href="#" target="_blank">📍 Buka di Google Maps →</a>
   </div>
@@ -594,7 +548,7 @@ function goTo(id) {
 }
 
 // ── NAV ──
-q('nav-icon').innerHTML = '<img src="https://i.ibb.co.com/vtch1md/1781702095775.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">'
+q('nav-icon').textContent = CONFIG.logo_emoji
 q('nav-nama').innerHTML = CONFIG.nama + `<small>${CONFIG.tagline}</small>`
 q('nav-wa').href = wa_url(`Halo ${CONFIG.nama}! Saya ingin tanya info layanan.`)
 q('nav-wa').textContent = '💬 ' + CONFIG.no_wa_tampil
@@ -645,10 +599,7 @@ q('promo-row').innerHTML = CONFIG.promo.map(p =>
 q('price-grid').innerHTML = CONFIG.layanan.map(l => `
   <div class="price-card">
     ${l.diskon ? '<div class="disc-badge">-20%</div>' : ''}
-    ${l.foto
-      ? `<div class="photo-placeholder photo-thumb"><div class="photo-ph-inner"><span class="photo-ph-icon">📷</span><span class="photo-ph-text">Foto Hasil</span></div></div>`
-      : `<div class="price-icon">${l.icon}</div>`
-    }
+    <div class="price-icon">${l.icon}</div>
     <div class="price-name">${l.nama}</div>
     ${l.special
       ? `<div class="price-special">⭐ Harga Khusus</div>`
@@ -773,7 +724,7 @@ q('cta-wa').href           = wa_url(`Halo ${CONFIG.nama}! Saya ingin order.`)
 q('cta-wa').textContent    = '💬 Chat WhatsApp'
 
 // ── FOOTER ──
-q('footer-logo').innerHTML = '<img src="https://i.ibb.co.com/vtch1md/1781702095775.png" style="width:24px;height:24px;border-radius:50%;vertical-align:middle;margin-right:8px;"> ' + CONFIG.nama.toUpperCase()
+q('footer-logo').textContent  = `${CONFIG.logo_emoji} ${CONFIG.nama.toUpperCase()}`
 q('footer-alamat').textContent = CONFIG.alamat
 q('footer-rating').textContent = `⭐ ${CONFIG.rating} · ${CONFIG.jumlah_ulasan} Ulasan Google`
 q('footer-copy').textContent  = `© ${new Date().getFullYear()} ${CONFIG.nama}. All rights reserved.`
