@@ -400,7 +400,7 @@ const CONFIG = {
     <div class="hero-right fu2">
       <img src="https://i.ibb.co.com/4ZzXkDzV/1781702053284.png"
            class="photo-hero"
-           style="object-fit:cover;border-radius:var(--radius);display:block;">
+           style="object-fit:contain;border-radius:var(--radius);display:block;">
       <div class="hero-card">
         <div class="hero-card-title">⚡ DAFTAR HARGA</div>
         <div id="hero-prices"></div>
@@ -590,7 +590,7 @@ function goTo(id) {
 }
 
 // ── NAV ──
-q('nav-icon').innerHTML = '<img src="https://i.ibb.co.com/vtch1md/1781702095775.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">'
+q('nav-icon').innerHTML = '<img src="https://i.ibb.co.com/vtch1md/1781702095775.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">'
 q('nav-nama').innerHTML = CONFIG.nama + `<small>${CONFIG.tagline}</small>`
 q('nav-wa').href = wa_url(`Halo ${CONFIG.nama}! Saya ingin tanya info layanan.`)
 q('nav-wa').textContent = '💬 ' + CONFIG.no_wa_tampil
