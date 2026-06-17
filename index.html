@@ -727,10 +727,7 @@ q('promo-row').innerHTML = CONFIG.promo.map(p =>
 q('price-grid').innerHTML = CONFIG.layanan.map(l => `
   <div class="price-card">
     ${l.diskon ? '<div class="disc-badge">-20%</div>' : ''}
-    ${l.foto
-      ? `<div class="photo-placeholder photo-thumb"><div class="photo-ph-inner"><span class="photo-ph-icon">📷</span><span class="photo-ph-text">Foto Hasil</span></div></div>`
-      : `<div class="price-icon">${l.icon}</div>`
-    }
+    <div class="price-icon">${l.icon}</div>
     <div class="price-name">${l.nama}</div>
     ${l.special
       ? `<div class="price-special">⭐ Harga Khusus</div>`
